@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 import {
     SiHtml5,
     SiCss3,
@@ -74,7 +75,7 @@ export default function Skills() {
 
         if (key.includes('java')) {
             return (
-                <img src="/images/java.png" alt="Java" width={24} height={24} style={{ display: 'block' }} />
+                <Image src="/images/java.png" alt="Java" width={24} height={24} />
             );
         }
 
@@ -85,7 +86,7 @@ export default function Skills() {
         // Ping Identity (use static asset for canonical mark)
         if (key.includes('ping')) {
             return (
-                <img src="/images/ping.svg" alt="Ping Identity" width={24} height={24} style={{ display: 'block' }} />
+                <Image src="/images/ping.svg" alt="Ping Identity" width={24} height={24} />
             );
         }
 
@@ -110,10 +111,10 @@ export default function Skills() {
 
         // JUnit (static asset) and Mockito
         if (key.includes('junit')) {
-            return <img src="/images/junit.svg" alt="JUnit" width={24} height={24} style={{ display: 'block' }} />;
+            return <Image src="/images/junit.svg" alt="JUnit" width={24} height={24} />;
         }
         if (key.includes('mockito')) {
-            return <img src="/images/mockito.svg" alt="Mockito" width={24} height={24} style={{ display: 'block' }} />;
+            return <Image src="/images/mockito.svg" alt="Mockito" width={24} height={24} />;
         }
 
         // tools / ide / quality
@@ -137,7 +138,7 @@ export default function Skills() {
     return (
         <section id="skills" className="w-full py-16" style={{ background: 'var(--site-bg)' }}>
             <div className="max-w-6xl mx-auto px-6">
-                <h2 className="text-2xl font-bold text-white">Skills</h2>
+                <h2 className="text-3xl font-bold text-white">Skills</h2>
                 <p className="mt-3 text-site-muted max-w-2xl">Focused on Java and backend engineering with strong experience in building production services.</p>
 
                 <div className="mt-8 space-y-6">

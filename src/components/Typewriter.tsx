@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type TypewriterProps = {
     words: string[];
@@ -24,14 +24,10 @@ export default function Typewriter({
     const [isDeleting, setIsDeleting] = useState(false);
     const [blink, setBlink] = useState(true);
 
-    const prefersReducedMotion = useMemo(() => {
-        try {
-            if (typeof window === 'undefined' || !window.matchMedia) return false;
-            return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        } catch {
-            return false;
-        }
-    }, []);
+    // Detect reduced motion on mount (client-only). Avoid calling
+    // window.matchMedia during render to keep SSR and client renders
+    // deterministic and prevent hydration mismatches.
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
     // Blinking caret
     useEffect(() => {
@@ -39,6 +35,35 @@ export default function Typewriter({
         const iv = setInterval(() => setBlink((v) => !v), 500);
         return () => clearInterval(iv);
     }, [prefersReducedMotion]);
+
+    // Run matchMedia after mount so we never call window during render.
+    useEffect(() => {
+        try {
+            if (typeof window === 'undefined' || !window.matchMedia) return;
+            // Narrow the type so we can safely call legacy addListener/removeListener
+            type MQ = MediaQueryList & {
+                addListener?: (h: (e: MediaQueryListEvent) => void) => void;
+                removeListener?: (h: (e: MediaQueryListEvent) => void) => void;
+            };
+
+            const mq = window.matchMedia('(prefers-reduced-motion: reduce)') as MQ;
+            // set initial value
+            setPrefersReducedMotion(Boolean(mq.matches));
+
+            // optional: listen for changes
+            const handler = (ev: MediaQueryListEvent) => setPrefersReducedMotion(Boolean(ev.matches));
+            if (typeof mq.addEventListener === 'function') {
+                mq.addEventListener('change', handler);
+                return () => mq.removeEventListener('change', handler);
+            } else if (typeof mq.addListener === 'function') {
+                // Safari fallback
+                mq.addListener(handler);
+                return () => mq.removeListener && mq.removeListener(handler);
+            }
+        } catch {
+            // ignore
+        }
+    }, []);
 
     useEffect(() => {
         if (prefersReducedMotion) {
@@ -82,9 +107,12 @@ export default function Typewriter({
     })();
 
     return (
-        <span className={className} aria-live="polite">
+        // This subtree changes on the client (typing animation). Suppress
+        // hydration warnings for this span because the client will update
+        // the content immediately after hydration.
+        <span className={className} aria-live="polite" suppressHydrationWarning>
             {wordToShow.slice(0, subIndex)}
-            <span aria-hidden className={`inline-block ml-0 w-2 ${blink ? "opacity-100" : "opacity-0"}`}>
+            <span aria-hidden suppressHydrationWarning className={`inline-block ml-0 w-2 ${blink ? "opacity-100" : "opacity-0"}`}>
                 |
             </span>
         </span>
