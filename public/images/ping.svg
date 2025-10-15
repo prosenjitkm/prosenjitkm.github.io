@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="pingTitle">
+  <title id="pingTitle">Ping Identity</title>
+  <rect width="24" height="24" rx="4" fill="#0B62A4" />
+  <path d="M6 12h12" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M8 8v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+</svg>

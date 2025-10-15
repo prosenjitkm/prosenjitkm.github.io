@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  /* Light theme defaults */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Semantic palette (light) */
+  --surface: #ffffff;
+  --muted: #6b7280; /* neutral-500 */
+  --primary: #111827; /* slate-900 */
+  --accent: #2563eb; /* blue-600 */
+  --border: #e5e7eb; /* neutral-200 */
+}
+
+/* Provide legacy variable names and font fallbacks in a standard CSS block */
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* font variables are optional: provide sensible fallbacks */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+    "Courier New", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme semantic palette */
+    --background: #0b1220; /* deep navy */
+    --foreground: #e6eef8; /* off-white */
+
+    --surface: #0f1724; /* slightly lighter surface */
+    --muted: #9aa6b2; /* muted text */
+    --primary: #e6eef8; /* primary text */
+    --accent: #60a5fa; /* blue-400 */
+    --border: #1f2a37; /* subtle border */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Provide some CSS variables for components that rely on neutral-* utilities */
+  --site-bg: var(--background);
+  --site-foreground: var(--foreground);
+  --site-surface: var(--surface);
+  --site-muted: var(--muted);
+  --site-accent: var(--accent);
+  --site-border: var(--border);
+}
+
+/* small utility for components that use text-site-muted */
+.text-site-muted {
+  color: var(--site-muted);
+}
