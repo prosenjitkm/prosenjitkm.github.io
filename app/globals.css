@@ -1,0 +1,5 @@
+/* Using Google Fonts via link tags in layout.tsx */
+:root {
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+}
