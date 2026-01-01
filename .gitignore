@@ -10,7 +10,6 @@
 
 # next.js
 /.next/
-/out/
 
 # production
 /build
@@ -36,3 +35,6 @@ next-env.d.ts
 
 # backup
 index.html
+
+# Keep the out folder for GitHub Pages deployment
+# /out/
