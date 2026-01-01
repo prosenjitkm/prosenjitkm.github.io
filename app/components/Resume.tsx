@@ -103,7 +103,7 @@ export default function Resume() {
                   <li><span className="font-semibold text-[#ff014f]">Java Design Patterns:</span> MVC, DAO, Singleton, Factory, Session Facade, Adapter, Bridge</li>
                   <li><span className="font-semibold text-[#ff014f]">Operating Systems:</span> Windows, Unix/Linux</li>
                   <li><span className="font-semibold text-[#ff014f]">Frameworks:</span> Spring Framework, MVC, Hibernate 3.0/4.0, Struts 2.0, Spring Boot, JPA</li>
-                  <li><span className="font-semibold text-[#ff014f]">IDE's:</span> Eclipse, IntelliJ, Visual Studio Code</li>
+                  <li><span className="font-semibold text-[#ff014f]">IDEs:</span> Eclipse, IntelliJ, Visual Studio Code</li>
                   <li><span className="font-semibold text-[#ff014f]">Programming Languages:</span> Java, JavaScript, C++, SQL, PL/SQL</li>
                   <li><span className="font-semibold text-[#ff014f]">Web Technologies:</span> HTML5, CSS3, jQuery, Bootstrap, Angular, Node.JS, Express.JS, React</li>
                   <li><span className="font-semibold text-[#ff014f]">Defect Tracking Tools:</span> Rally, JIRA, VSTS</li>
@@ -205,7 +205,7 @@ export default function Resume() {
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">SIGNATURE CONTRIBUTION</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Received a bug report from the DevOps team concerning a database that was being overworked as a result of an expensive query being called frequently from the UI. Examined the logs to determine and track when the problem first occurred. The bug was reproduced on the most recent piece of code, but only in production. I used git bisect to find the commit that caused the bug and then withdrew the branch. Using the browser DevTools, I tapped into the UI to debug. The initiative was successful; it was discovered that the faulty method was being called on every page, rather than just once in a while from a less-used specific feature. Due to an alignment of the modification and another piece of work from another developer that was merged into master minutes prior, CoffeeScript code that had been "commented out" years earlier was being included in minified production code.
+                  Received a bug report from the DevOps team concerning a database that was being overworked as a result of an expensive query being called frequently from the UI. Examined the logs to determine and track when the problem first occurred. The bug was reproduced on the most recent piece of code, but only in production. I used git bisect to find the commit that caused the bug and then withdrew the branch. Using the browser DevTools, I tapped into the UI to debug. The initiative was successful; it was discovered that the faulty method was being called on every page, rather than just once in a while from a less-used specific feature. Due to an alignment of the modification and another piece of work from another developer that was merged into master minutes prior, CoffeeScript code that had been &quot;commented out&quot; years earlier was being included in minified production code.
                 </p>
               </div>
             </div>

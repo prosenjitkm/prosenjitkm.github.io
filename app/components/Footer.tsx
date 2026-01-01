@@ -8,9 +8,9 @@ export default function Footer() {
           </div>
           <p className="text-gray-600">
             © {new Date().getFullYear()} All rights reserved by{' '}
-            <a href="/" className="text-[#ff014f] hover:underline">
+            <span className="text-[#ff014f]">
               Prosenjit Kumar Mandal
-            </a>
+            </span>
             .
           </p>
         </div>

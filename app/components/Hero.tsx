@@ -42,7 +42,7 @@ export default function Hero() {
               Welcome to my world
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-4 mb-6">
-              Hi, I'm <span className="text-[#ff014f]">Prosenjit Kumar Mandal</span>
+              Hi, I&apos;m <span className="text-[#ff014f]">Prosenjit Kumar Mandal</span>
             </h1>
             <div className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-6 h-12">
               a {displayText}
