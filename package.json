@@ -1,8 +1,7 @@
 {
   "name": "prosenjitkm.github.io",
   "version": "1.0.0",
-  "description": "Hello I am **Prosenjit**",
-  "main": "index.js",
+  "description": "Personal portfolio website built with Next.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
