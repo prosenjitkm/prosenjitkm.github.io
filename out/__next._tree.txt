@@ -8,4 +8,4 @@
 :HL["/assets/css/plugins/feature.css","style"]
 :HL["/assets/css/style.css","style"]
 :HL["/assets/images/logo/logo.png","image"]
-0:{"buildId":"ZSU-HxJGbrn8aEPsKfHj2","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"IgKxWzg5QhzEZlyPpD14y","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
