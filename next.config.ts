@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // basePath for GitHub Pages (remove if using custom domain)
-  // basePath: '/prosenjitkm.github.io',
+  basePath: '',
+  trailingSlash: true,
 };
 
 export default nextConfig;
